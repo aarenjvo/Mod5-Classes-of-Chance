@@ -1,5 +1,36 @@
 class Casino {
     // Write code here
+    constructor(name) {
+        this.name = name
+        this.timesPlayed = 0
+        this.winnings = 0
+
+    }
+
+    //write playGame method
+    playGame(betAmount) {
+        // Flip a coin (Math.random)
+            // if heads (<=.5)
+            // you win
+            // else tails
+            // you lose
+
+            let coinToss = Math.random()
+            this.timesPlayed += 1 // or you can use '++' to add 1 
+
+            if (coinToss <= .5) {
+                console.log(this.name, 'wins.')
+            } else {
+                console.log('You win.')
+                this.winnings = betAmount * (++this.timesPlayed + 1)
+            }
+            
+    }
+
+    cashOut() {
+        console.log("Your Total Winnings are:" , this.winnings)
+    }
+
 };
 
 // TESTS
